@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP1202_Assignment_1_GUI
 {
-    class RSVP
+    public class RSVP
     {
         private string date;
         private int id;

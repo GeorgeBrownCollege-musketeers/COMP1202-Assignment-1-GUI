@@ -27,5 +27,15 @@ namespace COMP1202_Assignment_1_GUI
             dtpEventDate.Format = DateTimePickerFormat.Custom;
             dtpEventDate.CustomFormat = "MM/dd/yyyy hh:mm:ss";
         }
+
+        private void btnBackToMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnBackToMenu_Click_1(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP1202_Assignment_1_GUI
 {
-    class EventCoordinator
+    public class EventCoordinator
     {
         CustomerManager custMan;
         EventManager eventMan;
@@ -23,6 +23,11 @@ namespace COMP1202_Assignment_1_GUI
         public bool addCustomer(string fname, string lname, string phone)
         {
             return custMan.addCustomer(fname, lname, phone);
+        }
+
+        public Customer[] GetCustomers()
+        {
+            return custMan.GetCustomers();
         }
 
         public string customerList()

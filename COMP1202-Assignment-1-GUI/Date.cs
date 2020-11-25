@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP1202_Assignment_1_GUI
 {
-    class Date
+    public class Date
     {
         public int year;
         public int month; // 1 Jan, 2, Feb....

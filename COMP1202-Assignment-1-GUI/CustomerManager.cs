@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace COMP1202_Assignment_1_GUI
 {
-    class CustomerManager
+    public class CustomerManager
     {
         private static int currentCustNumber;
         private int maxNumCustomers;
         private int numCustomers;
         private Customer[] customerList;
+
 
         public CustomerManager(int ccn, int max)
         {
@@ -29,6 +30,16 @@ namespace COMP1202_Assignment_1_GUI
             customerList[numCustomers] = c;
             numCustomers++;
             return true;
+        }
+
+        public Customer[] GetCustomers()
+        {
+            Customer[] existingCustomers = new Customer[numCustomers];
+            for(int i = 0; i < numCustomers; i++)
+            {
+                existingCustomers[i] = customerList[i];
+            }
+            return existingCustomers;
         }
 
         public int findCustomer(int cid)

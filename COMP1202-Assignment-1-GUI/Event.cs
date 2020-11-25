@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP1202_Assignment_1_GUI
 {
-    class Event
+    public class Event
     {
         private int eventId;
         private string eventName;

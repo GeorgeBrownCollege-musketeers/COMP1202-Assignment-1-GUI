@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP1202_Assignment_1_GUI
 {
-    class RSVPManager
+    public class RSVPManager
     {
         private static int currentRSVPNumber;
         private int maxNumRSVP;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP1202_Assignment_1_GUI
 {
-    class EventManager
+    public class EventManager
     {
         private static int currentEventId;
         private int maxEvents;
