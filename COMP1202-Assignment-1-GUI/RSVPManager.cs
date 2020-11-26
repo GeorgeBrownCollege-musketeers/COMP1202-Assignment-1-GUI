@@ -75,6 +75,18 @@ namespace COMP1202_Assignment_1_GUI
             return s;
         }
 
+        public RSVP[] GetRSVPs()
+        {
+            RSVP[] response = new RSVP[numRSVP];
+
+            for (int i = 0; i < numRSVP; i++) 
+            {
+                response[i] = rsvpList[i];
+            }
+
+            return response;
+        }
+
         public Customer[] getCustomersForRSVP(int eventID)
         {
             Customer[] custArr = new Customer[numRSVP];

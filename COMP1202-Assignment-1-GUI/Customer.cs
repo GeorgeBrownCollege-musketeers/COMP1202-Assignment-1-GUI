@@ -26,6 +26,8 @@ namespace COMP1202_Assignment_1_GUI
         public int getId() { return customerId; }
         public string getFirstName() { return firstName; }
         public string getLastName() { return lastName; }
+
+        public string getFullName() { return firstName + " " + lastName; }
         public string getPhone() { return phone; }
         public int getNumBookings() { return bookings; }
 

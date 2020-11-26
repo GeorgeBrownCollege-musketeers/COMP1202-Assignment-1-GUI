@@ -67,10 +67,14 @@ namespace COMP1202_Assignment_1_GUI
 
         public string getAttendees()
         {
-            string s = "\nCustomers registered :";
+            string s = "";
             for (int x = 0; x < numAttendees; x++)
             {
-                s = s + "\n" + attendeeList[x].getFirstName() + " " + attendeeList[x].getLastName();
+                s += attendeeList[x].getId() + " - " + attendeeList[x].getFirstName() + " " + attendeeList[x].getLastName();
+                if (x < numAttendees - 1) 
+                {
+                    s += "\n";
+                }
             }
             return s;
         }

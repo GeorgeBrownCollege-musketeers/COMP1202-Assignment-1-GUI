@@ -39,8 +39,19 @@ namespace COMP1202_Assignment_1_GUI
 
         private void btnEventOptions_Click(object sender, EventArgs e)
         {
-            EventOptions eo = new EventOptions();
+            EventOptions eo = new EventOptions(eCoord);
             eo.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnRSVP_Click(object sender, EventArgs e)
+        {
+            RegistrationMenu rm = new RegistrationMenu(eCoord);
+            rm.Show();
         }
     }
 }

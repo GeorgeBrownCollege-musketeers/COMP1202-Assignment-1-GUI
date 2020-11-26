@@ -23,8 +23,8 @@ namespace COMP1202_Assignment_1_GUI
 
             eCoord.addEvent("Test", "1", new Date(1, 1, 1, 1, 1), 10);
 
-            eCoord.addRSVP(200, 101);
-            eCoord.addRSVP(200, 102);
+            Console.WriteLine(eCoord.addRSVP(101, 200));
+            Console.WriteLine(eCoord.addRSVP(101, 201));
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

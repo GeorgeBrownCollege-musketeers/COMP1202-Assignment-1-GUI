@@ -42,13 +42,21 @@ namespace COMP1202_Assignment_1_GUI
 
         public void updateTable()
         {
+            this.dgvCustomers.Rows.Clear();
             foreach (Customer customer in this.eCoord.GetCustomers())
-                this.dgvCustomers.Rows.Add(customer.getFirstName(), customer.getLastName(),customer.getPhone());  
+                this.dgvCustomers.Rows.Add(customer.getId(), customer.getFirstName(), customer.getLastName(),customer.getPhone());  
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (dgvCustomers.Columns[e.ColumnIndex].Name == "Delete") 
+            {
+                if (MessageBox.Show("Are you sure you want to delete this record?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                {
+                    eCoord.deleteCustomer(Convert.ToInt32(dgvCustomers.CurrentRow.Cells["id"].Value));
+                    updateTable();
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,5 +64,15 @@ namespace COMP1202_Assignment_1_GUI
             this.Close();
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            eCoord.addCustomer(txtFirstName.Text, txtLastName.Text, txtPhone.Text);
+            updateTable();
+        }
     }
 }

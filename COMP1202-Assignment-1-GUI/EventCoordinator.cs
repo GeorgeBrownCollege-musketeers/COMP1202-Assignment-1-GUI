@@ -30,6 +30,16 @@ namespace COMP1202_Assignment_1_GUI
             return custMan.GetCustomers();
         }
 
+        public Event[] GetEvents()
+        {
+            return eventMan.GetEvents();
+        }
+
+        public RSVP[] GetRSVPs()
+        {
+            return rsvpMan.GetRSVPs();
+        }
+
         public string customerList()
         {
             return custMan.getCustomerList();
@@ -43,6 +53,12 @@ namespace COMP1202_Assignment_1_GUI
         {
             return custMan.deleteCustomer(id);
         }
+
+        public bool deleteEvent(int id)
+        {
+            return eventMan.deleteEvent(id);
+        }
+
         public bool isValidCustomer(int id)
         {
             return custMan.customerExist(id);

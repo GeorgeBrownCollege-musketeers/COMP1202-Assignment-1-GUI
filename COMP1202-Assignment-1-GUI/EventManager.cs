@@ -99,5 +99,16 @@ namespace COMP1202_Assignment_1_GUI
             return s;
         }
 
+        public Event[] GetEvents() 
+        {
+            Event[] result = new Event[numEvents];
+
+            for (int i = 0; i < numEvents; i++) 
+            {
+                result[i] = eventList[i];
+            }
+
+            return result;
+        } 
     }
 }

@@ -86,6 +86,7 @@
             this.btnRSVP.TabIndex = 3;
             this.btnRSVP.Text = "RSVP For Event";
             this.btnRSVP.UseVisualStyleBackColor = true;
+            this.btnRSVP.Click += new System.EventHandler(this.btnRSVP_Click);
             // 
             // btnExit
             // 
@@ -96,6 +97,7 @@
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // MainMenu
             // 
