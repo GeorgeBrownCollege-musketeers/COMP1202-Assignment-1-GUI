@@ -12,14 +12,23 @@ namespace COMP1202_Assignment_1_GUI
 {
     public partial class MainMenu : Form
     {
+        EventCoordinator eCoord;
+        
         public MainMenu()
         {
             InitializeComponent();
         }
 
+        public MainMenu(EventCoordinator eCoord)
+        {
+            this.eCoord = eCoord;
+            InitializeComponent();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            CustomerOptions co = new CustomerOptions();
+            CustomerOptions co = new CustomerOptions(eCoord);
+            
             co.Show();
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP1202_Assignment_1_GUI
 {
-    class Customer
+    public class Customer
     {
         private int customerId;
         private string firstName;
