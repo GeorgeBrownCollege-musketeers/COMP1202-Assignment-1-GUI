@@ -90,6 +90,11 @@ namespace COMP1202_Assignment_1_GUI
         {
             Event eve = eventMan.getEvent(eventId);
             Customer cus = custMan.getCustomer(custId);
+            if (rsvpMan.findRSVPByEveAndCus(eve, cus))
+            {
+                return false;
+            }
+
             if (eve == null || cus == null)
             {
                 return false;

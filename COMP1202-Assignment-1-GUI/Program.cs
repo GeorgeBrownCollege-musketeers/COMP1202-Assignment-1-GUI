@@ -20,6 +20,7 @@ namespace COMP1202_Assignment_1_GUI
             eCoord.addCustomer("Simon", "Bermudez", "123456789");
             eCoord.addCustomer("Fatih", "Camgoz", "123456789");
             eCoord.addCustomer("Oliver", "Kmiec", "123456789");
+            eCoord.addCustomer("Rahul", "Singla", "123456789");
 
             eCoord.addEvent("Test", "1", new Date(1, 1, 1, 1, 1), 10);
 
@@ -28,7 +29,9 @@ namespace COMP1202_Assignment_1_GUI
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainMenu(eCoord));
+            MainMenu mainMenu = new MainMenu(eCoord);
+            mainMenu.StartPosition = FormStartPosition.CenterScreen;
+            Application.Run(mainMenu);
         }
     }
 }

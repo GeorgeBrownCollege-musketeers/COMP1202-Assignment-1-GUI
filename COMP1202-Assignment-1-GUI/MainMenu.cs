@@ -28,29 +28,29 @@ namespace COMP1202_Assignment_1_GUI
         private void button1_Click(object sender, EventArgs e)
         {
             CustomerOptions co = new CustomerOptions(eCoord);
-            
+            co.StartPosition = FormStartPosition.CenterScreen;
             co.Show();
-        }
-
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnEventOptions_Click(object sender, EventArgs e)
         {
             EventOptions eo = new EventOptions(eCoord);
+            eo.StartPosition = FormStartPosition.CenterScreen;
             eo.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Are you sure to close the Application ?","Warning", MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void btnRSVP_Click(object sender, EventArgs e)
         {
             RegistrationMenu rm = new RegistrationMenu(eCoord);
+            rm.StartPosition = FormStartPosition.CenterScreen;
             rm.Show();
         }
     }

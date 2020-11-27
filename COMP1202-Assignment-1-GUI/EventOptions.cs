@@ -31,11 +31,6 @@ namespace COMP1202_Assignment_1_GUI
                 dgvEvents.Rows.Add(e.getEventId(), e.getEventName(), e.getVenue(), e.getEventDate().ToString(), e.getAttendees(), e.getMaxAttendees());
         }
 
-        private void dtpEventDate_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void EventOptions_Load(object sender, EventArgs e)
         {
             dtpEventDate.Format = DateTimePickerFormat.Custom;
@@ -53,11 +48,6 @@ namespace COMP1202_Assignment_1_GUI
             this.Close(); 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void dgvEvents_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvEvents.Columns[e.ColumnIndex].Name == "Delete")
@@ -72,13 +62,33 @@ namespace COMP1202_Assignment_1_GUI
 
         private void btnAddEvent_Click(object sender, EventArgs e)
         {
-            this.eCoord.addEvent(txtEventName.Text, txtEventVenue.Text, new COMP1202_Assignment_1_GUI.Date(dtpEventDate.Value.Day, dtpEventDate.Value.Month, dtpEventDate.Value.Year, dtpEventDate.Value.Hour, dtpEventDate.Value.Minute), Convert.ToInt32(nudMaxAttendees.Value));
+            string eveName = txtEventName.Text;
+            if (eveName == "")
+            {
+                MessageBox.Show("Please enter Event Name", "Input Required");
+                return;
+            }
+            
+            string eveVenue = txtEventVenue.Text;
+            if (eveVenue == "")
+            {
+                MessageBox.Show("Please enter Event Venue", "Input Required");
+                return;
+            }
+
+            int numAtt = Convert.ToInt32(nudMaxAttendees.Value);
+            if (numAtt < 0)
+            {
+                MessageBox.Show("Please enter Valid Number of Attendies", "Input Required");
+                return;
+            }
+
+            this.eCoord.addEvent(eveName, eveVenue, new COMP1202_Assignment_1_GUI.Date(dtpEventDate.Value.Day, dtpEventDate.Value.Month, dtpEventDate.Value.Year, dtpEventDate.Value.Hour, dtpEventDate.Value.Minute), numAtt);
             updateTable();
-        }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            txtEventName.Text = "";
+            txtEventVenue.Text = "";
+            nudMaxAttendees.Value = 0;
         }
     }
 }
