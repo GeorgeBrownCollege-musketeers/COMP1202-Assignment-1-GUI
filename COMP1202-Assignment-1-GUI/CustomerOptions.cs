@@ -64,15 +64,32 @@ namespace COMP1202_Assignment_1_GUI
             this.Close();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            eCoord.addCustomer(txtFirstName.Text, txtLastName.Text, txtPhone.Text);
+            string fn = txtFirstName.Text;
+            if (fn == "")
+            {
+                MessageBox.Show("Please enter Customer First Name","Input Required");
+                return;
+            }
+            string ln = txtLastName.Text;
+            if (ln == "")
+            {
+                MessageBox.Show("Please enter Customer Last Name", "Input Required");
+                return;
+            }
+            string pn = txtPhone.Text;
+            if (pn == "")
+            {
+                MessageBox.Show("Please enter Customer Phone Number", "Input Required");
+                return;
+            }
+            eCoord.addCustomer(fn, ln, pn);
             updateTable();
+
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtPhone.Text = "";
         }
     }
 }

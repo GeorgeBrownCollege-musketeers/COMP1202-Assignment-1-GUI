@@ -50,6 +50,15 @@ namespace COMP1202_Assignment_1_GUI
             return -1;
         }
 
+        public bool findRSVPByEveAndCus(Event eve, Customer cus)
+        {
+            for (int x = 0; x < numRSVP; x++)
+            {
+                if (rsvpList[x].getCustomer() == cus && rsvpList[x].getEvent() == eve) return true;
+            }
+            return false;
+        }
+
         public RSVP getRSVP(int rid)
         {
             int loc = findRSVP(rid);

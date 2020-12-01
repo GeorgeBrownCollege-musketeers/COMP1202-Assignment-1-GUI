@@ -68,7 +68,10 @@ namespace COMP1202_Assignment_1_GUI
             int cmbEventsValue = Convert.ToInt32(((KeyValuePair<string, string>)cmbEvents.SelectedItem).Key);
             int cmbCustomersValue = Convert.ToInt32(((KeyValuePair<string, string>)cmbCustomers.SelectedItem).Key);
 
-            eCoord.addRSVP(cmbEventsValue, cmbCustomersValue);
+            if(!eCoord.addRSVP(cmbEventsValue, cmbCustomersValue))
+            {
+                MessageBox.Show("RSVP exists for particular Customer and Event","Message");
+            }
 
             updateTable();
         }
